@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Trivia Game</title>
+
+    <!-- Bootstrap File -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="./assets/javascript/app.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="column"></div>
+            <div class="column">
+                <h1>
+                    World History Trivia!
+                </h1>
+            </div>
+            <div class="column">
+                <div>
+                    <h2>
+                        Time Left:
+                    </h2>
+                </div>
+                <div>
+                    <p id="timeLeft">
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="column"></div>
+            <div class="column">
+                <h2>
+                    What Year did the first World War Start?
+                </h2>
+            </div>
+            <div class="column"></div>
+        </div>
+
+        <div class="row">
+            <form>
+                <input type="radio" name="question0" value="a"> 1927
+                <input type="radio" name="question0" value="b"> 1896
+                <input type="radio" name="question0" value="c"> 1914
+                <input type="radio" name="question0" value="d"> 1917
+            </form>
+            <p class="rightAnswer" style="visibility: hidden;">
+                Answer: 1914
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="column"></div>
+            <div class="column">
+                <h2>
+                    Who was the first Western Explorer to reach China?
+                </h2>
+            </div>
+            <div class="column"></div>
+        </div>
+
+        <div class="row">
+            <form>
+                <input type="radio" name="question1" value="a"> Vasco Da Gama
+                <input type="radio" name="question1" value="b"> Marco Polo
+                <input type="radio" name="question1" value="c"> Christopher Columbus
+                <input type="radio" name="question1" value="d"> Ferdinand Magellan
+            </form>
+            <p class="rightAnswer" style="visibility: hidden;">
+                    Answer: Marco Polo
+                </p>
+        </div>
+
+        <div class="row">
+            <div class="column"></div>
+            <div class="column">
+                <h2>
+                    The disease that ravaged and killed a third of Europe's population in the 14th century is known as:
+                </h2>
+            </div>
+            <div class="column"></div>
+        </div>
+
+        <div class="row">
+            <form>
+                <input type="radio" name="question2" value="a"> The Bubonic Plague
+                <input type="radio" name="question2" value="b"> Smallpox
+                <input type="radio" name="question2" value="c"> Yellow Fever
+                <input type="radio" name="question2" value="d"> The White Death
+            </form>
+            <p class="rightAnswer" style="visibility: hidden;">
+                    Answer: The Bubonic Plague
+                </p>
+        </div>
+
+        <div class="row">
+            <div class="column"></div>
+            <div class="column">
+                <h2>
+                    How much money did the United States pay France for the Louisiana Territory?
+                </h2>
+            </div>
+            <div class="column"></div>
+        </div>
+
+        <div class="row">
+            <form>
+                <input type="radio" name="question3" value="a"> 27 Million Euros
+                <input type="radio" name="question3" value="b"> 252 Million Dollars
+                <input type="radio" name="question3" value="c"> 531 Million Silver Shillings
+                <input type="radio" name="question3" value="d"> 68 Million Francs
+            </form>
+            <p class="rightAnswer" style="visibility: hidden;">
+                    Answer: 68 Million Francs
+                </p>
+        </div>
+
+        <div class="row">
+            <div class="column"></div>
+            <div class="column">
+                <h2>
+                    In 1947, India gained independence from which country?
+                </h2>
+            </div>
+            <div class="column"></div>
+        </div>
+
+        <div class="row">
+            <form>
+                <input type="radio" name="question4" value="a"> The Republic of China
+                <input type="radio" name="question4" value="b"> Japan
+                <input type="radio" name="question4" value="c"> Great Britain
+                <input type="radio" name="question4" value="d"> The United States of America
+            </form>
+            <p class="rightAnswer" style="visibility: hidden;">
+                    Answer: Great Britain
+                </p>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="column">
+                <form>
+                    <input type="button" id="submitBtn" value="Submit">
+                </form>
+            </div>
+            <div class="column">
+                <form>
+                    <input type="button" id="restartBtn" style ="visibility: hidden;" value="Restart">
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</hmtl>
