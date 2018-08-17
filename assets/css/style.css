@@ -1,0 +1,55 @@
+
+
+.rightAnswer{
+
+    margin-left: 75px;
+    color: green;
+
+}
+
+#timeLeft{
+
+font-size: 40px;
+color: white;
+background-color: black;
+text-align: center;
+padding: 10px;
+
+}
+
+h2{
+
+    font-size: 40px;
+    padding:15px;
+
+}
+
+#headerRow{
+
+    border-bottom-style: solid;
+    border-bottom-color: darkslategray;
+    border-bottom-width: 5px;
+
+}
+
+h1{
+
+    padding-top: 25px;
+    font-size: 60px;
+
+
+}
+
+.column{
+
+    margin-left: 15px;
+
+}
+
+form{
+
+margin-left: 50px;
+margin-top: 10px;
+margin-bottom: 15px;
+
+}
