@@ -1,107 +1,112 @@
 
 
-var answers = ["c", "b", "a", "d", "c"];
-var correct = 0;
-var wrong = 0;
-var timeLimit = 60000
-var milliseconds = timeLimit;
-var seconds;
-var countDown
-var interval
+let correctAnswers = 0;
+let wrongAnswers = 0;
+
+const questions = [
+
+  {name: "question0", answer: "c"},
+  {name: "question1", answer: "b"},  
+  {name: "question2", answer: "a"},  
+  {name: "question3", answer: "d"},  
+  {name: "question4", answer: "c"},    
+
+];
 
 $(document).ready(function () {
 
-    countDown = setTimeout(timesUp, timeLimit);
-
-    interval = setInterval(myTimer, 1000);
+    displayTime();
 
     $("#submitBtn").click(function () {
 
-        window.clearInterval(interval);
+        window.clearInterval();
 
-        window.clearTimeout(countDown);
+        questions.forEach(element => {
+            console.log(element);
 
-
-        for (var i = 0; i <= (answers.length - 1); i++) {
-
-            var radioValue = $("input[name='question" + i + "']:checked").val();
-
+            let radioValue = $("input[name=" + element.name +  "]:checked").val();
             console.log(radioValue);
 
-            console.log(answers[i]);
-
-            if ($("input[name='question" + i + "']:checked").val() == answers[i]) {
-                correct++;
-                console.log(correct);
+            if (radioValue == element.answer) {
+                correctAnswers++;
+                console.log(correctAnswers);
             }
             else {
-                wrong++;
-                console.log(wrong);
-
+                wrongAnswers++;
+                console.log(wrongAnswers);
             }
 
-        }
+          });
+          
 
-        console.log(correct);
+        console.log(correctAnswers);
 
-        alert("You got " + correct + " Questions right and " + wrong + " Questions wrong.");
+        alert("You got " + correctAnswers + " Questions right and " + wrongAnswers + " Questions wrong.");
 
         $("#restartBtn").attr("style", "visiblility: visible;");
 
         $(".rightAnswer").attr("style", "visiblility: visible;");
+
+        $("#submitBtn").hide();
 
 
     });
 
     $("#restartBtn").click(function () {
 
-        correct = 0;
-        wrong = 0;
+        correctAnswers = 0;
+        wrongAnswers = 0;
 
         $("#restartBtn").hide();
-
         $(".rightAnswer").hide();
+        $("#submitBtn").attr("style", "visiblility: visible;");  
 
 
-        for (var i = 0; i <= answers.length; i++) {
+        questions.forEach(element => {
 
-            $("input[name='question" + i + "']").attr("checked", false);
+            $("input[name=" + element.name + "]").attr("checked", false);
 
-        }
+        });
 
-         milliseconds = timeLimit;
+        displayTime();
 
-         setTimeout(timesUp, timeLimit);
+    });
+});
 
-         countDown = setInterval(myTimer, 1000);
+function displayTime() {
 
+    let timeLimit = 180000;
+
+   let interval = setInterval(function(){
+
+         timeLimit -= 1000;
+
+         var minutes = Math.floor((timeLimit % (1000 * 60 * 60)) / (1000 * 60));
+         var seconds = Math.floor((timeLimit % (1000 * 60)) / 1000);
+
+        $("#timeLeft").text(minutes + ":" + seconds);
+
+    }, 1000);
+
+    $("#submitBtn").click(function () {
+
+        window.clearInterval(interval);
 
     });
 
+    setTimeout(function(){
+        alert("You've run out of Time!");
 
-});
+        alert("You got " + correctAnswers + " Questions right and " + wrongAnswers + " Questions wrong.");
+    
+        $("#restartBtn").attr("style", "visiblility: visible;");
+    
+        $(".rightAnswer").attr("style", "visiblility: visible;");  
+     
+        window.clearInterval(interval);
+    
+        $("#timeLeft").text("0:00");
 
-function myTimer() {
-
-    milliseconds = milliseconds - 1000;
-    seconds = milliseconds/1000;
-    console.log(seconds);
-    $("#timeLeft").text(seconds);
+    }, timeLimit);
 }
 
-function timesUp()
-{
-    alert("You've run out of Time!");
-
-    alert("You got " + correct + " Questions right and " + wrong + " Questions wrong.");
-
-    $("#restartBtn").attr("style", "visiblility: visible;");
-
-    $(".rightAnswer").attr("style", "visiblility: visible;");  
-
-    window.clearTimeout(countDown);    
-    window.clearInterval(interval);
-
-    $("#timeLeft").text("0");
-
-}
